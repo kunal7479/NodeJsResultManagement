@@ -1,0 +1,40 @@
+<a href="/" class="btn btn-info" style="margin-top:5px;background-color: rgb(1, 101, 140);">LOGOUT</a>
+<style>
+  body {
+    background-image: url('../img/addstudent.jpg')
+  }
+
+  .stuTable table {
+    background-color: rgb(234, 234, 234);
+  }
+</style>
+<h4>MY RESULT</h4>
+<div class="stuTable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Roll no.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= one.roll %>
+        </td>
+        <td>
+          <%= one.name %>
+        </td>
+        <td>
+          <%= one.dob.toLocaleDateString() %>
+        </td>
+        <td>
+          <%= one.score %>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

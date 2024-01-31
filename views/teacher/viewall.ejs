@@ -1,0 +1,48 @@
+<style>
+  body {
+    background-image: url('../img/blue.jpg');
+  }
+
+  .tableDiv table {
+    background-color: rgb(234, 234, 234);
+  }
+</style>
+<a href="/teacher/option" class="btn btn-info" style="margin-top:5px;background-color: rgb(1, 101, 140);">Back</a>
+<h4>ALL STUDENTS</h4>
+<div class="tableDiv">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Score</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% student.forEach(element=> { %>
+        <tr class="head">
+          <td>
+            <%= element.roll %>
+          </td>
+          <td>
+            <%= element.name %>
+          </td>
+          <td>
+            <%= element.dob.toLocaleDateString() %>
+          </td>
+          <td>
+            <%= element.score %>
+          </td>
+          <td>
+            <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;"
+                src="https://img.icons8.com/material-outlined/30/000000/edit.png" /></a>
+            <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;"
+                src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png" /></a>
+          </td>
+        </tr>
+        <%}) %>
+    </tbody>
+  </table>
+</div>
